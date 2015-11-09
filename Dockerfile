@@ -43,7 +43,7 @@ RUN echo "#!/bin/bash" > $BSMASTER && \
     echo "spark-class org.apache.spark.deploy.master.Master &\nsleep 5" \
         >> $BSMASTER && \
     echo "echo 'starting namenode'" >> $BSMASTER && \
-    echo "service ssh start && $HADOOP_PREFIX/sbin/start-dfs.sh --config HADOOP_CONF > /dev/null 2>&1 &\nsleep 5" >> $BSMASTER && 
+    echo "service ssh start && $HADOOP_PREFIX/sbin/start-dfs.sh --config HADOOP_CONF > /dev/null 2>&1 &\nsleep 5" >> $BSMASTER
 
 # hdfs dfsadmin -safemode leave
 ENV BSWORKER /bootslave.sh
